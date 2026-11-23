@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280" role="img" aria-labelledby="title desc">
+  <title id="title">Gariqz — Engineering meets live operations</title>
+  <desc id="desc">A green and graphite studio panel. Web applications, interactive experiences, and the systems behind them. Decorative signal traces settle after four seconds.</desc>
+  <style>
+    .trace { stroke-dasharray: 900; stroke-dashoffset: 0; animation: signal 4s ease-out 1; }
+    @keyframes signal { from { stroke-dashoffset: 900; } to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) { .trace { animation: none; } }
+  </style>
+  <rect width="960" height="280" rx="16" fill="#191b1e"/>
+  <path d="M600 0v280M0 222h960" stroke="#393b3e"/>
+  <g fill="#f5f1e8" font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="107" font-size="82" font-weight="800" letter-spacing="-4">Gariqz.</text>
+    <text x="44" y="155" font-size="25" font-weight="600">Engineering meets live operations.</text>
+    <text x="44" y="190" font-size="17" fill="#c7c4bd">Web applications. Interactive experiences.</text>
+    <text x="44" y="257" font-size="15" font-weight="600">SOFTWARE ENGINEERING</text>
+    <text x="349" y="257" font-size="15" font-weight="600">RESEARCH &amp; DEVELOPMENT</text>
+  </g>
+  <g stroke="#4c4d4c" fill="none" stroke-width="1">
+    <path d="M630 65h300M630 115h300M630 165h300"/>
+    <path d="M650 32v166M710 32v166M770 32v166M830 32v166M890 32v166" stroke-dasharray="2 7"/>
+  </g>
+  <g class="trace" fill="none" stroke="#7ee787" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M634 65h32l10-15 14 29 14-44 15 57 16-27h58l10-15 14 29 14-44 15 57 16-27h64"/>
+    <path d="M634 115h47v-12h32v25h52v-25h32v25h52v-13h77"/>
+    <path d="M634 165h35l13-8 15 16 15-8h56l13-8 15 16 15-8h115"/>
+  </g>
+  <g fill="#7ee787">
+    <circle cx="666" cy="65" r="4"/><circle cx="765" cy="115" r="4"/><circle cx="811" cy="165" r="4"/>
+  </g>
+  <text x="632" y="204" fill="#c7c4bd" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="1">CODE / INTERACTION / OPERATIONS</text>
+  <rect x="631" y="237" width="297" height="29" rx="5" fill="#7ee787"/>
+  <text x="779" y="257" fill="#191b1e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" text-anchor="middle">IDEAS, BUILT INTO EXPERIENCES.</text>
+</svg>

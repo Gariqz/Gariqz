@@ -1,0 +1,41 @@
+name: Contribution activity
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contribution-activity
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      # Verified against GitHub API: repos/actions/checkout/commits/v4.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Check renderer
+        run: python3 tests/check_activity.py
+      - name: Fetch contribution activity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/update_activity.py
+      - name: Commit changed SVGs only
+        run: |
+          git add -- assets/activity-dark.svg assets/activity-light.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: refresh contribution activity' -- assets/activity-dark.svg assets/activity-light.svg
+          git push origin HEAD:"${{ github.event.repository.default_branch }}"
